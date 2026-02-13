@@ -7,7 +7,7 @@ import HeroBanner from "@/components/Herobanner";
 
 export default function About() {
   return (
-    <main>
+    <main className="bg-white">
       <HeroSection />
       <WhoWeAreSection />
       <EcosystemPartnersSection />

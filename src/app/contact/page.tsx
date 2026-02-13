@@ -4,7 +4,7 @@ import Contactinfosection from "@/pages/Contact/Contactinfosection";
 
 export default function ContactPage() {
     return (
-        <main>
+        <main className="bg-white">
             <Contacthero />
             <Contactformsection />
             <Contactinfosection />

@@ -10,7 +10,7 @@ import HeroBanner from "@/components/Herobanner";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-white">
       <HeroSection />
       <Startusing />
       <Whatwedosection />

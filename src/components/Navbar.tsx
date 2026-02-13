@@ -26,9 +26,9 @@ const Navbar: React.FC = () => {
 
         <div className="flex items-center gap-8 xl:gap-12">
           <Link
-            href="/about-us"
+            href="/About"
             className={`text-gray-800 hover:text-[#F05A24] transition-colors duration-300 font-medium ${
-              isActive("/about-us") ? "text-[#F05A24]" : ""
+              isActive("/About") ? "text-[#F05A24]" : ""
             }`}
           >
             About us

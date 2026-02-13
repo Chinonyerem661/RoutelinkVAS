@@ -47,10 +47,10 @@ const PartnershipModelsSection: React.FC<PartnershipModelsSectionProps> = ({
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="mb-16">
-          <h2 className="text-3xl md:text-2xl font-medium text-gray-900 mb-6 font-geist">
+          <h2 className="text-3xl md:text-2xl font-medium text-gray-900 mb-6">
             {heading}
           </h2>
-          <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-4xl font-geist">
+          <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-4xl">
             {description}{" "}
             <span className="text-[#F05A24] font-medium">{highlightText}</span>
           </p>
@@ -69,12 +69,12 @@ const PartnershipModelsSection: React.FC<PartnershipModelsSectionProps> = ({
               </div>
 
               {/* Title */}
-              <h3 className="text-gray-900 font-medium text-lg mb-4 leading-tight font-geist">
+              <h3 className="text-gray-900 font-medium text-lg mb-4 leading-tight">
                 {model.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-500 text-sm leading-relaxed font-geist">
+              <p className="text-gray-500 text-sm leading-relaxed">
                 {model.description}
               </p>
             </div>

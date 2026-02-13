@@ -15,36 +15,21 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
 }) => {
   return (
     <section
-      className="relative w-full py-20 px-6 flex flex-col items-center justify-center text-center overflow-hidden"
-      style={{ backgroundColor: "#F05A24" }}
+      className="relative w-full py-20 px-6 flex flex-col items-center justify-center text-center overflow-hidden bg-[#F05A24]"
     >
-      {/* Vertical stripe texture */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `repeating-linear-gradient(
-            to right,
-            rgba(255,255,255,0.05) 0px,
-            rgba(255,255,255,0.05) 40px,
-            transparent 40px,
-            transparent 80px
-          )`,
-        }}
-      />
-
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-6">
-        <h1 className="text-white text-3xl md:text-4xl font-semibold leading-tight">
+        <h1 className="text-white text-3xl md:text-4xl font-medium leading-tight">
           {title}
         </h1>
 
-        <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-2xl">
+        <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-3xl">
           {description}
         </p>
 
         <Link
           href={buttonHref}
-          className="mt-2 px-8 py-3 bg-white text-[#F05A24] font-medium text-sm hover:bg-orange-50 transition-colors duration-300"
+          className="mt-2 px-8 py-3 bg-white text-[#F05A24] font-medium text-sm hover:bg-orange-50 transition-colors duration-300 rounded-lg"
         >
           {buttonText}
         </Link>

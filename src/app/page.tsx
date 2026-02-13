@@ -4,6 +4,9 @@ import Whatwedosection from "@/pages/Home/Whatwedosection";
 import PartnersSection from "@/pages/Home/Partnerssection";
 import Whyussection from "@/pages/Home/Whyussection";
 import Partnershipmodelssection from "@/pages/Home/Partnershipmodelssection";
+import Testimonialssection from "@/pages/Home/Testimonialssection";
+import HeroBanner from "@/components/Herobanner";
+
 
 export default function Home() {
   return (
@@ -14,6 +17,8 @@ export default function Home() {
       <PartnersSection />
       <Whyussection />
       <Partnershipmodelssection />
+      <Testimonialssection />
+      <HeroBanner />
     </main>
   );
 }

@@ -3,6 +3,7 @@ import CTAButton from "@/components/Ctabutton";
 import HeroImage from "@/assets/web-vas-hero.jpg";
 
 interface HeroSectionProps {
+  categoryTitle?: string;
   tagline?: string;
   title?: string;
   buttonText?: string;
@@ -12,6 +13,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
+  categoryTitle = "Web & Mobile VAS",
   tagline = "One Click Payment via Mobile Airtime",
   title = "Your customers pay through their phone network. Fast, safe, and simple.",
   buttonText = "Let's Start Building",
@@ -22,6 +24,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     <section className="w-full bg-[#FAF9F6] pt-32 pb-24 flex flex-col items-center text-center overflow-hidden rounded-b-[100px] md:rounded-b-[140px]">
       {/* Text Content */}
       <div className="px-6 max-w-5xl mx-auto flex flex-col items-center gap-6">
+         {/* Category Title */}
+         <span className="text-xl md:text-2xl font-semibold text-black mb-2 block">
+            {categoryTitle}
+        </span>
+
         <h1 className="text-[#F05A24] font-medium text-3xl md:text-5xl lg:text-6xl leading-tight">
           {tagline}
         </h1>

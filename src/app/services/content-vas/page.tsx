@@ -6,7 +6,7 @@ import ServiceDetailSection from "@/pages/content-based-vas/Servicedetail";
 export default function ContentVAS() {
     return (
        <main className="bg-white">
-        <ContentHero />
+        <ContentHero categoryTitle="Content Based VAS" />
         <ServiceDetailSection />
         <HowWeWorkSection />
         <HeroBanner

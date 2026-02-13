@@ -1,6 +1,6 @@
 import Image from "next/image";
 import CTAButton from "@/components/Ctabutton";
-import HeroImage from "@/assets/content-hero.jpg";
+import HeroImage from "@/assets/web-dev.jpg";
 
 interface HeroSectionProps {
   categoryTitle?: string;
@@ -13,9 +13,9 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
-  categoryTitle = "Content Based VAS",
-  tagline = "Turn Your Content Into Cash!",
-  title = "We help you deliver your content. Send daily tips, news, games, or lessons—and get paid for it.",
+  categoryTitle,
+  tagline = "From Landing Page to Full Platform",
+  title = "Scalable, mobile-responsive websites built with VAS integration, performance, and security at the core.",
   buttonText = "Let's Start Building",
   buttonHref = "/contact",
   imageAlt = "RoutelinkVAS platform preview",
@@ -24,11 +24,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     <section className="w-full bg-[#FAF9F6] pt-32 pb-24 flex flex-col items-center text-center overflow-hidden rounded-b-[100px] md:rounded-b-[140px]">
       {/* Text Content */}
       <div className="px-6 max-w-5xl mx-auto flex flex-col items-center gap-6">
-        {/* Category Title */}
-        <span className="text-xl md:text-2xl font-semibold text-black mb-2 block">
+        {categoryTitle && (
+          <span className="text-xl md:text-2xl font-semibold text-black mb-2 block">
             {categoryTitle}
-        </span>
-
+          </span>
+        )}
         <h1 className="text-[#F05A24] font-medium text-3xl md:text-5xl lg:text-6xl leading-tight">
           {tagline}
         </h1>

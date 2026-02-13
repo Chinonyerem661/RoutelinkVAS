@@ -3,25 +3,37 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { HiOutlineBars3 } from "react-icons/hi2";
+import { HiOutlineBars3, HiChevronDown } from "react-icons/hi2";
 import { AiOutlineClose } from "react-icons/ai";
 import Logo from "../assets/Logo.svg";
 import Image from "next/image";
 
+const services = [
+  { title: "Content Based VAS", href: "/services/content-vas" },
+  { title: "Web & Mobile VAS", href: "/services/web-mobile-vas" },
+  { title: "Web development", href: "/services/web-development" },
+  { title: "Charging and Billing", href: "/services/charging-billing" },
+  { title: "Entertainment", href: "/services/entertainment" },
+  { title: "CRBT & OTT Services", href: "/services/crbt-ott" },
+];
+
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState<boolean>(false);
   const pathname = usePathname();
 
   const toggleNav = (): void => setOpen(!open);
+  const toggleMobileServices = (): void => setMobileServicesOpen(!mobileServicesOpen);
 
   const isActive = (path: string) => pathname === path;
+  const isParentActive = (path: string) => pathname?.startsWith(path);
 
   return (
-    <nav className="w-full fixed z-50 bg-white ">
+    <nav className="w-full fixed z-50 bg-white shadow-sm">
       {/* DESKTOP NAV */}
       <div className="hidden lg:flex w-full h-[80px] px-8 xl:px-16 2xl:px-28 items-center justify-between">
         <Link href="/">
-<Image src={Logo} alt="routelink VAS" height={40} className="h-[18px] w-auto" />
+          <Image src={Logo} alt="routelink VAS" height={40} className="h-[18px] w-auto" />
         </Link>
 
         <div className="flex items-center gap-8 xl:gap-12">
@@ -34,14 +46,35 @@ const Navbar: React.FC = () => {
             About us
           </Link>
 
-          <Link
-            href="/services"
-            className={`text-gray-800 hover:text-[#F05A24] transition-colors duration-300 font-medium ${
-              isActive("/services") ? "text-[#F05A24]" : ""
-            }`}
-          >
-            Services
-          </Link>
+          {/* Services Dropdown - Desktop */}
+          <div className="relative group">
+            <Link
+              href="/services"
+              className={`flex items-center gap-1 text-gray-800 hover:text-[#F05A24] transition-colors duration-300 font-medium ${
+                isParentActive("/services") ? "text-[#F05A24]" : ""
+              }`}
+            >
+              Services
+              <HiChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+            </Link>
+            
+            {/* Dropdown Menu */}
+            <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 min-w-[260px]">
+              <div className="bg-white rounded-xl shadow-xl border border-gray-100 p-4">
+                 <div className="flex flex-col gap-2">
+                    {services.map((service) => (
+                      <Link
+                        key={service.href}
+                        href={service.href}
+                        className="px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#F05A24] rounded-lg transition-colors"
+                      >
+                        {service.title}
+                      </Link>
+                    ))}
+                 </div>
+              </div>
+            </div>
+          </div>
 
           <Link
             href="/contact"
@@ -62,9 +95,9 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* MOBILE NAV */}
-      <div className="lg:hidden flex justify-between items-center px-5 h-[70px] bg-white shadow-sm">
+      <div className="lg:hidden flex justify-between items-center px-5 h-[70px] bg-white shadow-sm relative z-50">
         <Link href="/">
-{/* <Image src={Logo} alt="routelink VAS" height={34} className="h-[34px] w-auto" /> */}
+           <Image src={Logo} alt="routelink VAS" height={34} className="h-[24px] w-auto" />
         </Link>
 
         <button type="button" onClick={toggleNav} aria-label="Toggle menu">
@@ -78,7 +111,7 @@ const Navbar: React.FC = () => {
 
       {/* MOBILE MENU */}
       <div
-        className={`lg:hidden fixed h-full w-full bg-white transition-transform duration-500 top-[70px] ${
+        className={`lg:hidden fixed h-full w-full bg-white transition-transform duration-500 top-[70px] z-40 overflow-y-auto pb-32 ${
           open ? "transform translate-x-0" : "transform -translate-x-full"
         }`}
       >
@@ -86,25 +119,42 @@ const Navbar: React.FC = () => {
           <li className="py-5 border-b border-gray-200">
             <Link
               onClick={toggleNav}
-              href="/about-us"
+              href="/About"
               className={`block ${
-                isActive("/about-us") ? "text-[#F05A24] font-semibold" : ""
+                isActive("/About") ? "text-[#F05A24] font-semibold" : ""
               }`}
             >
               About us
             </Link>
           </li>
+          
+          {/* Services Mobile */}
           <li className="py-5 border-b border-gray-200">
-            <Link
-              onClick={toggleNav}
-              href="/services"
-              className={`block ${
-                isActive("/services") ? "text-[#F05A24] font-semibold" : ""
+            <button
+              onClick={toggleMobileServices}
+              className={`flex items-center justify-between w-full ${
+                isParentActive("/services") ? "text-[#F05A24] font-semibold" : ""
               }`}
             >
               Services
-            </Link>
+              <HiChevronDown className={`w-5 h-5 transition-transform duration-300 ${mobileServicesOpen ? "rotate-180" : ""}`} />
+            </button>
+            
+            {/* Mobile Dropdown Content */}
+            <div className={`mt-2 space-y-2 overflow-hidden transition-all duration-300 ${mobileServicesOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}>
+               {services.map((service) => (
+                  <Link
+                    key={service.href}
+                    onClick={toggleNav}
+                    href={service.href}
+                    className="block py-3 px-4 text-sm text-gray-600 hover:text-[#F05A24] bg-gray-50 rounded-lg"
+                  >
+                    {service.title}
+                  </Link>
+               ))}
+            </div>
           </li>
+
           <li className="py-5 border-b border-gray-200">
             <Link
               onClick={toggleNav}

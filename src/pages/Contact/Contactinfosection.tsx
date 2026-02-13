@@ -2,7 +2,7 @@ import Image from "next/image";
 import { FaPhoneAlt, FaEnvelope, FaInstagram, FaMapMarkerAlt } from "react-icons/fa";
 
 // Update with actual background image path
-import ContactBgImage from "@/assets/contact-us.jpg"; // same image as How We Work section
+import ContactBgImage from "@/assets/contact-us.jpg"; 
 
 interface ContactInfo {
   icon: React.ReactNode;
@@ -19,25 +19,25 @@ interface ContactInfoSectionProps {
 
 const defaultContactInfo: ContactInfo[] = [
   {
-    icon: <FaPhoneAlt className="w-5 h-5" />,
+    icon: <FaPhoneAlt className="w-4 h-4" />,
     label: "Phone Number:",
     value: "(+234) 12 345 678 90",
     link: "tel:+2341234567890",
   },
   {
-    icon: <FaEnvelope className="w-5 h-5" />,
+    icon: <FaEnvelope className="w-4 h-4" />,
     label: "Email Address:",
     value: "info@routelinkVAS.com",
     link: "mailto:info@routelinkVAS.com",
   },
   {
-    icon: <FaInstagram className="w-5 h-5" />,
+    icon: <FaInstagram className="w-4 h-4" />,
     label: "Socials:",
     value: "RoutelinkVAS",
     link: "https://instagram.com/routelinkvas",
   },
   {
-    icon: <FaMapMarkerAlt className="w-5 h-5" />,
+    icon: <FaMapMarkerAlt className="w-4 h-4" />,
     label: "Office Address:",
     value: "HQ Routelink, Lagos 900108, Ikeja, Lagos.",
     link: "https://maps.google.com/?q=HQ+Routelink+Lagos",
@@ -50,52 +50,65 @@ const ContactInfoSection: React.FC<ContactInfoSectionProps> = ({
   contactInfo = defaultContactInfo,
 }) => {
   return (
-    <section className="relative w-full h-[500px] md:h-[400px] overflow-hidden">
-      {/* Background Image - No overlay */}
-      <Image
-        src={backgroundImage}
-        alt="Contact background"
-        fill
-        className="object-cover"
-        sizes="100vw"
-        priority
-      />
+    <section className="relative w-full min-h-[600px] flex items-center py-20 bg-[#FACAB9] overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0 bg-[#FACAB9]">
+         <Image
+            src={backgroundImage}
+            alt="Contact background"
+            fill
+            className="object-contain object-right"
+            priority
+         />
+         {/* Optional Overlay to ensure text readability or match peach tone if needed 
+             The provided image looks like it has a peach background or filter. 
+             If the raw image is not peachy, we might need a mix-blend-overlay or similar. 
+             Assuming raw image needs the peach tint based on previous context.
+         */}
+         {/* <div className="absolute inset-0 bg-[#F4D4C8] mix-blend-multiply opacity-60" /> */}
+      </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full px-6 md:px-12 lg:px-20 xl:px-28 py-12 flex flex-col justify-center">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 xl:px-28">
+        
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
+        <h2 className="text-3xl font-medium text-white mb-12">
           {heading}
         </h2>
 
         {/* Info Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {contactInfo.map((info, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
+              className="bg-white p-8 shadow-sm flex flex-col items-start justify-between min-h-[220px] transition-transform hover:-translate-y-1 duration-300"
             >
               {/* Icon */}
-              <div className="w-10 h-10 rounded-full bg-[#F05A24] flex items-center justify-center text-white mb-4">
+              <div className="w-10 h-10 rounded-full bg-[#F05A24] flex items-center justify-center text-white mb-6">
                 {info.icon}
               </div>
 
-              {/* Label */}
-              <p className="text-gray-600 text-sm mb-2">{info.label}</p>
+              {/* Text Group */}
+              <div>
+                {/* Label */}
+                <p className="text-gray-900 text-sm mb-2">{info.label}</p>
 
-              {/* Value */}
-              {info.link ? (
-                <a
-                  href={info.link}
-                  target={info.link.startsWith("http") ? "_blank" : undefined}
-                  rel={info.link.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="text-[#F05A24] font-bold text-base hover:underline"
-                >
-                  {info.value}
-                </a>
-              ) : (
-                <p className="text-[#F05A24] font-bold text-base">{info.value}</p>
-              )}
+                {/* Value */}
+                {info.link ? (
+                  <a
+                    href={info.link}
+                    target={info.link.startsWith("http") ? "_blank" : undefined}
+                    rel={info.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="text-[#F05A24] font-medium text-lg leading-snug hover:underline block"
+                  >
+                    {info.value}
+                  </a>
+                ) : (
+                  <p className="text-[#F05A24] font-medium text-lg leading-snug">
+                    {info.value}
+                  </p>
+                )}
+              </div>
             </div>
           ))}
         </div>

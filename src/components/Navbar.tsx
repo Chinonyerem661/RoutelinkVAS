@@ -38,9 +38,9 @@ const Navbar: React.FC = () => {
 
         <div className="flex items-center gap-8 xl:gap-12">
           <Link
-            href="/About"
-            className={`text-gray-800 hover:text-[#F05A24] transition-colors duration-300 font-medium ${
-              isActive("/About") ? "text-[#F05A24]" : ""
+            href="/about"
+            className={`hover:text-[#F05A24] transition-colors duration-300 font-medium ${
+              isActive("/about") ? "text-[#F05A24]" : "text-gray-800"
             }`}
           >
             About us
@@ -50,8 +50,8 @@ const Navbar: React.FC = () => {
           <div className="relative group">
             <Link
               href="/services"
-              className={`flex items-center gap-1 text-gray-800 hover:text-[#F05A24] transition-colors duration-300 font-medium ${
-                isParentActive("/services") ? "text-[#F05A24]" : ""
+              className={`flex items-center gap-1 hover:text-[#F05A24] transition-colors duration-300 font-medium ${
+                isParentActive("/services") ? "text-[#F05A24]" : "text-gray-800"
               }`}
             >
               Services
@@ -78,8 +78,8 @@ const Navbar: React.FC = () => {
 
           <Link
             href="/contact"
-            className={`text-gray-800 hover:text-[#F05A24] transition-colors duration-300 font-medium ${
-              isActive("/contact") ? "text-[#F05A24]" : ""
+            className={`hover:text-[#F05A24] transition-colors duration-300 font-medium ${
+              isActive("/contact") ? "text-[#F05A24]" : "text-gray-800"
             }`}
           >
             Contact

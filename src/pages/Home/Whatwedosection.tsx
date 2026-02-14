@@ -45,7 +45,7 @@ const WhatWeDoSection: React.FC<WhatWeDoSectionProps> = ({
   services = defaultServices,
 }) => {
   return (
-    <section className="w-full bg-white py-14 px-6 md:px-12 lg:px-20 xl:px-28">
+    <section className="w-full bg-white py-14 px-6 md:px-12 lg:px-20 xl:px-28 md:mb-32">
       <div className="max-w-8xl mx-auto">
         {/* Top Row */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-12">
@@ -66,7 +66,7 @@ const WhatWeDoSection: React.FC<WhatWeDoSectionProps> = ({
           </div>
 
           {/* Right: CTA Button */}
-          <div className="flex-shrink-0 md:mt-8">
+          <div className="flex-shrink-0 mt-8 md:mt-0">
             <CTAButton text={buttonText} href={buttonHref} />
           </div>
         </div>
@@ -84,7 +84,7 @@ const WhatWeDoSection: React.FC<WhatWeDoSectionProps> = ({
         `}</style>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mt-20 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-8 gap-y-12 mt-20 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <div
               key={service.label}
@@ -93,10 +93,10 @@ const WhatWeDoSection: React.FC<WhatWeDoSectionProps> = ({
             {/* Icon Circle */}
             <div className="relative flex items-center justify-center">
               {/* Active State Outer Ring - visible on hover */}
-              <div className="pulse-ring absolute w-[140px] h-[140px] rounded-full border border-[#F05A24] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="pulse-ring absolute w-[100px] h-[100px] md:w-[140px] md:h-[140px] rounded-full border border-[#F05A24] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* Main Circle Container */}
-              <div className="icon-container relative w-[130px] h-[130px] rounded-full flex items-center justify-center transition-all duration-300 bg-[#F05A24]">
+              <div className="icon-container relative w-[90px] h-[90px] md:w-[130px] md:h-[130px] rounded-full flex items-center justify-center transition-all duration-300 bg-[#F05A24]">
                 
                 {/* Normal Icon (White) - Always visible */}
                 <Image
@@ -104,7 +104,7 @@ const WhatWeDoSection: React.FC<WhatWeDoSectionProps> = ({
                   alt={service.label}
                   width={60}
                   height={60}
-                  className="icon relative transition-opacity duration-300"
+                  className="icon relative transition-opacity duration-300 w-10 h-10 md:w-[60px] md:h-[60px]"
                 />
               </div>
             </div>
@@ -112,10 +112,10 @@ const WhatWeDoSection: React.FC<WhatWeDoSectionProps> = ({
             {/* Content Group (Divider + Label) */}
             <div className="flex flex-col items-center gap-4 w-full">
                {/* Divider */}
-              <div className="w-full h-px max-w-[140px] bg-gray-400 group-hover:bg-[#F05A24] transition-colors duration-300" />
+              <div className="w-full h-px max-w-[100px] md:max-w-[140px] bg-gray-400 group-hover:bg-[#F05A24] transition-colors duration-300" />
               
               {/* Label */}
-              <p className="text-gray-800 text-lg font-normal group-hover:text-[#F05A24] transition-colors duration-300">
+              <p className="text-gray-800 text-sm md:text-lg font-normal group-hover:text-[#F05A24] transition-colors duration-300">
                 {service.label}
               </p>
             </div>

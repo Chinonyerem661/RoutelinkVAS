@@ -15,15 +15,15 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
 }) => {
   return (
     <section
-      className="relative w-full py-12 px-5 md:py-20 flex flex-col items-center justify-center text-center overflow-hidden bg-[#F05A24]"
+      className="relative w-full py-12 px-5 md:py-32 flex flex-col items-center justify-center text-center overflow-hidden bg-[#F05A24]"
     >
       {/* Content */}
-      <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-6">
-        <h1 className="text-white text-3xl md:text-4xl font-medium leading-tight">
+      <div className="relative z-10 max-w-3xl md:max-w-5xl mx-auto flex flex-col items-center gap-6">
+        <h1 className="text-white text-3xl md:text-5xl font-medium leading-tight">
           {title}
         </h1>
 
-        <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-3xl">
+        <p className="text-white/90 text-sm md:text-lg leading-relaxed max-w-3xl md:max-w-4xl">
           {description}
         </p>
 

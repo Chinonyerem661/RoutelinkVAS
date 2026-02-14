@@ -28,7 +28,7 @@ const PartnersSection: React.FC<PartnersSectionProps> = ({
             {description}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center sm:items-center gap-10 sm:gap-56">
+          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-56">
             <TelecomPartners />
             <LicenseBadge text={nccText} />
           </div>

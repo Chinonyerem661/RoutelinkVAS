@@ -54,14 +54,15 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
 
   return (
     <section className="w-full bg-white py-20 px-6 md:px-12 lg:px-20 xl:px-28">
-      <div className="max-w-[1400px] mx-auto">
+
+      <div className="max-w-8xl mx-auto">
         {/* Heading */}
         <h2 className="text-3xl md:text-2xl font-medium text-gray-900 mb-12">
           {heading}
         </h2>
 
         {/* Content Container */}
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-10 items-center">
+        <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-10 lg:gap-10 items-center">
           
           {/* Left: Image */}
           <div className="w-full lg:w-1/2 relative">

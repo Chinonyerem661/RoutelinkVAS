@@ -44,7 +44,8 @@ const PartnershipModelsSection: React.FC<PartnershipModelsSectionProps> = ({
 }) => {
   return (
     <section className="w-full bg-white py-20 px-6 md:px-12 lg:px-20 xl:px-28">
-      <div className="max-w-[1400px] mx-auto">
+
+      <div className="max-w-8xl mx-auto">
         {/* Header */}
         <div className="mb-16">
           <h2 className="text-3xl md:text-2xl font-medium text-gray-900 mb-6">
@@ -57,7 +58,7 @@ const PartnershipModelsSection: React.FC<PartnershipModelsSectionProps> = ({
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {models.map((model, index) => (
             <div
               key={index}

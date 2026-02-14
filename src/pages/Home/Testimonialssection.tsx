@@ -83,8 +83,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
               {testimonials[currentIndex].quote}
             </p>
             
-            {/* Quote Icon - Aligned right/bottom of text, moved inside */}
-            {/* Quote Icon - Aligned right/bottom of text, moved inside */}
+            
              <div className="flex justify-end pr-12 mb-6">
               <Image 
                 src={quoteIcon} 

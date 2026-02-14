@@ -57,7 +57,7 @@ const ContactInfoSection: React.FC<ContactInfoSectionProps> = ({
             src={backgroundImage}
             alt="Contact background"
             fill
-            className="object-contain object-right"
+            className="hidden md:block object-contain object-right"
             priority
          />
          {/* Optional Overlay to ensure text readability or match peach tone if needed 

@@ -53,6 +53,7 @@ const HowWeWorkSection: React.FC<HowWeWorkSectionProps> = ({
   const [scrollDistance, setScrollDistance] = useState(0);
   const [lineLength, setLineLength] = useState(0);
   const [lineStart, setLineStart] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(true);
 
   // Measure the width of the horizontal track and line length
   useEffect(() => {
@@ -66,6 +67,8 @@ const HowWeWorkSection: React.FC<HowWeWorkSectionProps> = ({
         // Add some padding to measurement to ensure last item clears nicely
         const distance = Math.max(0, trackWidth - windowWidth + 100); 
         setScrollDistance(distance);
+        
+        setIsDesktop(window.innerWidth >= 768);
 
         // Calculate line geometry
         // Children: BackgroundLine, OrangeLine, Step1, Step2...
@@ -133,26 +136,27 @@ const HowWeWorkSection: React.FC<HowWeWorkSectionProps> = ({
   
   return (
     // Height determines how long the user scrolls to finish the animation
-    <section ref={sectionRef} className="relative w-full h-[400vh]">
+    <section ref={sectionRef} className="relative w-full h-auto md:h-[400vh]">
       
-      {/* Sticky Container */}
-      <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center">
+      {/* Sticky/Grid Container */}
+      <div className="relative h-auto min-h-[65vh] md:h-screen md:sticky md:top-0 md:overflow-hidden md:flex md:items-center py-16 md:py-0">
         
         {/* Background */}
         <div className="absolute inset-0 z-0">
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            fill
-            className="object-cover object-center"
-            priority
-          />
-
+          <div className="sticky top-0 h-screen w-full md:absolute md:inset-0 md:h-full">
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              fill
+              className="object-cover object-[75%_50%] md:object-center"
+              priority
+            />
+          </div>
         </div>
 
         <div className="relative z-10 w-full mx-auto px-6 md:px-12 flex flex-col justify-center h-full">
           <div className="max-w-[1400px] mx-auto w-full">
-            <h2 className="text-4xl md:text-3xl font-medium text-black mb-20">
+            <h2 className="text-3xl md:text-4xl font-medium text-black mb-20">
               {heading}
             </h2>
           </div>
@@ -160,15 +164,14 @@ const HowWeWorkSection: React.FC<HowWeWorkSectionProps> = ({
           {/* Horizontal Moving Track */}
           <div 
             ref={trackRef}
-            // Increased padding-left to shift first item to the right
-            className="flex items-start gap-24 md:gap-40 will-change-transform pl-8 md:pl-[25%]"
+            className="grid grid-cols-1 gap-12 md:flex md:items-start md:gap-40 md:will-change-transform md:pl-[25%] md:pb-0"
             style={{
-              transform: `translate3d(-${progress * scrollDistance}px, 0, 0)`,
+              transform: isDesktop ? `translate3d(-${progress * scrollDistance}px, 0, 0)` : 'none',
             }}
           > 
              {/* Background Line (Black) */}
              <div 
-                className="absolute top-[32px] md:top-[40px] left-0 h-1 bg-black/20 -z-10" 
+                className="hidden md:block absolute top-[32px] md:top-[40px] left-0 h-1 bg-black/20 -z-10" 
                 style={{ 
                     left: `${lineStart}px`,
                     width: `${lineLength}px`
@@ -177,7 +180,7 @@ const HowWeWorkSection: React.FC<HowWeWorkSectionProps> = ({
              
              {/* Progress Line (Orange) */}
              <div 
-                className="absolute top-[32px] md:top-[40px] left-0 h-1 bg-[#F05A24] -z-10 transition-all duration-75 ease-linear"
+                className="hidden md:block absolute top-[32px] md:top-[40px] left-0 h-1 bg-[#F05A24] -z-10 transition-all duration-75 ease-linear"
                 style={{ 
                     left: `${lineStart}px`,
                     width: `${progress * lineLength}px`,
@@ -188,10 +191,23 @@ const HowWeWorkSection: React.FC<HowWeWorkSectionProps> = ({
             {steps.map((step, index) => {
                // Logic to highlight circle
                const percent = index / (steps.length - 1 || 1);
-               const isActive = progress >= (percent - 0.05);
+               const isActive = isDesktop ? progress >= (percent - 0.05) : true; // Always active (orange) or inactive on mobile? User said "just circles". Maybe keep them orange or black? Let's default to orange (active) for static view or keeping logic? 
+               // Actually asking "no lines, just circles" usually means valid state. Let's make them all "active" style or just standard?
+               // Let's stick to using the same Conditional logic but since progress is 0 on mobile (if reduced height) or varying, let's just make 'em all standard or checked.
+               // If it's static grid, "isActive" logic based on scroll is weird.
+               // Let's make them all orange border/text on mobile? Or just black?
+               // Let's force isActive=true on mobile for consistent look? Or false?
+               // Let's use `isActive` logic only on Desktop. On mobile, maybe just static style?
+               // Let's use `const isActive = isDesktop ? progress >= ... : true;` -> All highlighted?
+               // Or let's just keep the loop logic. If progress is 0 on mobile, only first is active. 
+               // User didn't specify interaction. "Just circles".
+               // Let's keep existing logic but `progress` might be 0. So only first 1 active.
+               // If I make all active, it might look better?
+               // I'll stick to `isActive` as is, but since interaction allows reading all, maybe all should be highlighted?
+               // Let's try matching the loop logic for now.
 
                return (
-                <div key={step.number} className="flex flex-col gap-6 w-[300px] md:w-[400px] flex-shrink-0">
+                <div key={step.number} className="flex flex-col gap-6 w-full md:w-[400px] flex-shrink-0">
                   {/* Number Circle */}
                   <div 
                     className={`w-16 h-16 md:w-20 md:h-20 rounded-full border-[3px] flex items-center justify-center font-medium text-2xl md:text-2xl shadow-sm transition-colors duration-300 bg-white ${

@@ -97,7 +97,7 @@ const Navbar: React.FC = () => {
       {/* MOBILE NAV */}
       <div className="lg:hidden flex justify-between items-center px-5 h-[70px] bg-white shadow-sm relative z-50">
         <Link href="/">
-           <Image src={Logo} alt="routelink VAS" height={34} className="h-[24px] w-auto" />
+           <Image src={Logo} alt="routelink VAS" height={34} className="h-[18px] w-auto" />
         </Link>
 
         <button type="button" onClick={toggleNav} aria-label="Toggle menu">
@@ -130,15 +130,24 @@ const Navbar: React.FC = () => {
           
           {/* Services Mobile */}
           <li className="py-5 border-b border-gray-200">
-            <button
-              onClick={toggleMobileServices}
-              className={`flex items-center justify-between w-full ${
-                isParentActive("/services") ? "text-[#F05A24] font-semibold" : ""
-              }`}
-            >
-              Services
-              <HiChevronDown className={`w-5 h-5 transition-transform duration-300 ${mobileServicesOpen ? "rotate-180" : ""}`} />
-            </button>
+            <div className="flex items-center justify-between w-full">
+              <Link
+                onClick={toggleNav}
+                href="/services"
+                className={`flex-grow ${
+                  isParentActive("/services") ? "text-[#F05A24] font-semibold" : ""
+                }`}
+              >
+                Services
+              </Link>
+              <button
+                onClick={toggleMobileServices}
+                className="p-2 -mr-2"
+                aria-label="Toggle services menu"
+              >
+                <HiChevronDown className={`w-5 h-5 transition-transform duration-300 ${mobileServicesOpen ? "rotate-180" : ""}`} />
+              </button>
+            </div>
             
             {/* Mobile Dropdown Content */}
             <div className={`mt-2 space-y-2 overflow-hidden transition-all duration-300 ${mobileServicesOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}>

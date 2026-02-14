@@ -15,7 +15,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
 }) => {
   return (
     <section
-      className="relative w-full py-20 px-6 flex flex-col items-center justify-center text-center overflow-hidden bg-[#F05A24]"
+      className="relative w-full py-12 px-5 md:py-20 flex flex-col items-center justify-center text-center overflow-hidden bg-[#F05A24]"
     >
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-6">

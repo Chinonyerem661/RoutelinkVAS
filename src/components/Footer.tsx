@@ -22,117 +22,91 @@ const Footer: React.FC = () => {
 
         {/* Footer Links Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-16">
-          {/* Column 1 */}
+
+          {/* Column 1 — Quick Links */}
           <div>
+            <h3 className="text-white font-semibold text-base uppercase tracking-widest mb-5">Quick Links</h3>
             <ul className="space-y-4">
               <li>
-                <Link
-                  href="/"
-                  className="text-[#F05A24] hover:text-[#ff6b3d] transition-colors duration-300 text-base"
-                >
+                <Link href="/" className="text-[#F05A24] hover:text-[#ff6b3d] transition-colors duration-300 text-base">
                   Home
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/about-us"
-                  className="text-gray-300 hover:text-white transition-colors duration-300 text-base"
-                >
+                <Link href="/about" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/contact-us"
-                  className="text-gray-300 hover:text-white transition-colors duration-300 text-base"
-                >
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-gray-300 hover:text-white transition-colors duration-300 text-base"
-                >
+                <Link href="/services" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
                   Services
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/team"
-                  className="text-gray-300 hover:text-white transition-colors duration-300 text-base"
-                >
-                  Team
+                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                  Contact Us
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 2 */}
+          {/* Column 2 — Services */}
           <div>
+            <h3 className="text-white font-semibold text-base uppercase tracking-widest mb-5">Services</h3>
             <ul className="space-y-4">
               <li>
-                <Link
-                  href="/savings-products"
-                  className="text-gray-300 hover:text-white transition-colors duration-300 text-base"
-                >
-                  Savings Products
+                <Link href="/services/content-vas" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                  Content Based VAS
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/blah-blah"
-                  className="text-gray-300 hover:text-white transition-colors duration-300 text-base"
-                >
-                  Blah Blah
+                <Link href="/services/web-mobile-vas" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                  Web &amp; Mobile VAS
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/products"
-                  className="text-gray-300 hover:text-white transition-colors duration-300 text-base"
-                >
-                  Products
+                <Link href="/services/web-development" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                  Web Development
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/team"
-                  className="text-gray-300 hover:text-white transition-colors duration-300 text-base"
-                >
-                  Team
+                <Link href="/services/charging-billing" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                  Charging &amp; Billing
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/entertainment" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                  Entertainment
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/crbt-ott" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                  CRBT &amp; OTT Services
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3 - Empty in design */}
+          {/* Column 3 — Spacer */}
           <div></div>
 
-          {/* Column 4 - Contact Information */}
+          {/* Column 4 — Contact Information */}
           <div>
+            <h3 className="text-white font-semibold text-base uppercase tracking-widest mb-5">Contact Us</h3>
             <address className="not-italic text-gray-300 space-y-6">
               <div className="leading-relaxed">
-                Plot XA, Block X,<br />
-                Routelink Road,<br />
-                HQ Routelink, Lagos State.
+                Ground Floor, Africa Re House,<br />
+                Plot 1679 Karimu Kotun St,<br />
+                Victoria Island, Lagos.
               </div>
               <div className="space-y-2">
-                <a
-                  href="mailto:support@routelink.com"
-                  className="block hover:text-white transition-colors duration-300"
-                >
-                  support@routelink.com
-                </a>
-                <a
-                  href="tel:+1234567891234"
-                  className="block hover:text-white transition-colors duration-300"
-                >
-                  +123 456 789 1234
-                </a>
+                <p>Contact: <a href="tel:+2348036390777" className="hover:text-white transition-colors duration-300">+234 803 639 0777</a></p>
+                <p>WhatsApp: <a href="https://wa.me/2348036390777" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">+234 803 639 0777</a></p>
+                <p>Email: <a href="mailto:busdev@routelinksys.com" className="hover:text-white transition-colors duration-300">busdev@routelinksys.com</a></p>
               </div>
             </address>
           </div>
+
         </div>
 
         {/* Divider */}

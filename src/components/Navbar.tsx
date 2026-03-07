@@ -119,9 +119,9 @@ const Navbar: React.FC = () => {
           <li className="py-5 border-b border-gray-200">
             <Link
               onClick={toggleNav}
-              href="/About"
+              href="/about"
               className={`block ${
-                isActive("/About") ? "text-[#F05A24] font-semibold" : ""
+                isActive("/about") ? "text-[#F05A24] font-semibold" : ""
               }`}
             >
               About us

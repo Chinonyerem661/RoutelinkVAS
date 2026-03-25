@@ -5,6 +5,7 @@ import PartnersSection from "@/pages/Home/Partnerssection";
 import Whyussection from "@/pages/Home/Whyussection";
 import Partnershipmodelssection from "@/pages/Home/Partnershipmodelssection";
 import Testimonialssection from "@/pages/Home/Testimonialssection";
+import QuantumLeapSection from "@/pages/Home/QuantumLeapSection";
 import HeroBanner from "@/components/Herobanner";
 
 
@@ -18,6 +19,7 @@ export default function Home() {
       <Whyussection />
       <Partnershipmodelssection />
       <Testimonialssection />
+      <QuantumLeapSection />
       <HeroBanner />
     </main>
   );

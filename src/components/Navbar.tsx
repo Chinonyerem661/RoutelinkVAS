@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
           </Link>
 
           <Link
-            href="/start-building"
+            href="/contact"
             className="px-6 py-2.5 border-2 border-[#F05A24] text-[#F05A24] rounded-lg hover:bg-[#F05A24] hover:text-white transition-all duration-300 font-medium"
           >
             Lets Start Building
@@ -178,7 +178,7 @@ const Navbar: React.FC = () => {
           <li className="py-5">
             <Link
               onClick={toggleNav}
-              href="/start-building"
+              href="/contact"
               className="block px-6 py-2.5 border-2 border-[#F05A24] text-[#F05A24] rounded-lg text-center hover:bg-[#F05A24] hover:text-white transition-all duration-300"
             >
               Lets Start Building

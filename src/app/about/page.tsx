@@ -1,8 +1,8 @@
-import HeroSection from "@/pages/About/Abouthero";
-import WhoWeAreSection from "@/pages/About/Whowearesection";
-import EcosystemPartnersSection from "@/pages/About/Ecosystempartnerssection";
-import MissionSection from "@/pages/About/Mission";
-import WhatSetsUsApartSection from "@/pages/About/Whatsetsusapart";
+import HeroSection from "@/pages/about/Abouthero";
+import WhoWeAreSection from "@/pages/about/Whowearesection";
+import EcosystemPartnersSection from "@/pages/about/Ecosystempartnerssection";
+import MissionSection from "@/pages/about/Mission";
+import WhatSetsUsApartSection from "@/pages/about/Whatsetsusapart";
 import HeroBanner from "@/components/Herobanner";
 
 export default function About() {

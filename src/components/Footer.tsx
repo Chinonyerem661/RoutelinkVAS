@@ -1,10 +1,16 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Logo from "../assets/Logo.svg";
 import Image from "next/image";
 
 const Footer: React.FC = () => {
+  const pathname = usePathname();
+  const isActive = (path: string) => pathname === path;
+
   return (
     <footer className="bg-[#2a2a2a] text-white">
       {/* Orange Top Border */}
@@ -28,22 +34,42 @@ const Footer: React.FC = () => {
             <h3 className="text-white font-semibold text-base uppercase tracking-widest mb-5">Quick Links</h3>
             <ul className="space-y-4">
               <li>
-                <Link href="/" className="text-[#F05A24] hover:text-[#ff6b3d] transition-colors duration-300 text-base">
+                <Link 
+                  href="/" 
+                  className={`transition-colors duration-300 text-base ${
+                    isActive("/") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
+                  }`}
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                <Link 
+                  href="/about" 
+                  className={`transition-colors duration-300 text-base ${
+                    isActive("/about") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
+                  }`}
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                <Link 
+                  href="/services" 
+                  className={`transition-colors duration-300 text-base ${
+                    isActive("/services") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
+                  }`}
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                <Link 
+                  href="/contact" 
+                  className={`transition-colors duration-300 text-base ${
+                    isActive("/contact") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
+                  }`}
+                >
                   Contact Us
                 </Link>
               </li>
@@ -55,32 +81,62 @@ const Footer: React.FC = () => {
             <h3 className="text-white font-semibold text-base uppercase tracking-widest mb-5">Services</h3>
             <ul className="space-y-4">
               <li>
-                <Link href="/services/content-vas" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                <Link 
+                  href="/services/content-vas" 
+                  className={`transition-colors duration-300 text-base ${
+                    isActive("/services/content-vas") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
+                  }`}
+                >
                   Content Based VAS
                 </Link>
               </li>
               <li>
-                <Link href="/services/web-mobile-vas" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                <Link 
+                  href="/services/web-mobile-vas" 
+                  className={`transition-colors duration-300 text-base ${
+                    isActive("/services/web-mobile-vas") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
+                  }`}
+                >
                   Web &amp; Mobile VAS
                 </Link>
               </li>
               <li>
-                <Link href="/services/web-development" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                <Link 
+                  href="/services/web-development" 
+                  className={`transition-colors duration-300 text-base ${
+                    isActive("/services/web-development") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
+                  }`}
+                >
                   Web Development
                 </Link>
               </li>
               <li>
-                <Link href="/services/charging-billing" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                <Link 
+                  href="/services/charging-billing" 
+                  className={`transition-colors duration-300 text-base ${
+                    isActive("/services/charging-billing") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
+                  }`}
+                >
                   Charging &amp; Billing
                 </Link>
               </li>
               <li>
-                <Link href="/services/entertainment" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                <Link 
+                  href="/services/entertainment" 
+                  className={`transition-colors duration-300 text-base ${
+                    isActive("/services/entertainment") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
+                  }`}
+                >
                   Entertainment
                 </Link>
               </li>
               <li>
-                <Link href="/services/crbt-ott" className="text-gray-300 hover:text-white transition-colors duration-300 text-base">
+                <Link 
+                  href="/services/crbt-ott" 
+                  className={`transition-colors duration-300 text-base ${
+                    isActive("/services/crbt-ott") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
+                  }`}
+                >
                   CRBT &amp; OTT Services
                 </Link>
               </li>

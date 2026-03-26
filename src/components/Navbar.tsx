@@ -66,7 +66,11 @@ const Navbar: React.FC = () => {
                       <Link
                         key={service.href}
                         href={service.href}
-                        className="px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#F05A24] rounded-lg transition-colors"
+                        className={`px-4 py-3 text-sm rounded-lg transition-colors ${
+                          isActive(service.href) 
+                            ? "bg-orange-50 text-[#F05A24] font-semibold" 
+                            : "text-gray-700 hover:bg-orange-50 hover:text-[#F05A24]"
+                        }`}
                       >
                         {service.title}
                       </Link>
@@ -156,7 +160,11 @@ const Navbar: React.FC = () => {
                     key={service.href}
                     onClick={toggleNav}
                     href={service.href}
-                    className="block py-3 px-4 text-sm text-gray-600 hover:text-[#F05A24] bg-gray-50 rounded-lg"
+                    className={`block py-3 px-4 text-sm rounded-lg transition-colors ${
+                      isActive(service.href)
+                        ? "text-[#F05A24] font-semibold bg-orange-50"
+                        : "text-gray-600 hover:text-[#F05A24] bg-gray-50"
+                    }`}
                   >
                     {service.title}
                   </Link>

@@ -16,11 +16,11 @@ const QuantumLeapSection: React.FC = () => {
     { number: 1, name: "fest mobile", color: "orange", logo: FestMobileLogo, href: "https://festmobile.ng/" },
     { number: 2, name: "routelink enterprise", color: "gray", logo: EnterpriseLogo, href: "https://routelinkent.com/" },
     { number: 3, name: "routelink IDA", color: "orange", logo: GenericLogo, href: "#" },
-    { number: 4, name: "routepay", color: "gray", logo: RoutepayLogo, href: "#" },
+    { number: 4, name: "routepay", color: "gray", logo: RoutepayLogo, href: "https://routepay.com/" },
     { number: 5, name: "routelink telecom", color: "orange", logo: TelecomLogo, href: "https://routelinktel.com/" },
     { number: 6, name: "routelink VAS", color: "gray", logo: GenericLogo, href: "#" },
     { number: 7, name: "routelink microfinance bank", color: "orange", logo: MfbLogo, href: "#" },
-    { number: 8, name: "routepay", color: "gray", logo: RoutepayLogo, href: "#" },
+    { number: 8, name: "routepay", color: "gray", logo: RoutepayLogo, href: "https://routepay.com/" },
   ];
 
   const handleBrandClick = (brandName: string) => {

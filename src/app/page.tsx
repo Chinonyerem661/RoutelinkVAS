@@ -1,5 +1,4 @@
 import HeroSection from "@/pages/Home/Herosection";
-import Startusing from "@/pages/Home/Startusing";
 import Whatwedosection from "@/pages/Home/Whatwedosection";
 import PartnersSection from "@/pages/Home/Partnerssection";
 import Whyussection from "@/pages/Home/Whyussection";
@@ -13,7 +12,6 @@ export default function Home() {
   return (
     <main className="bg-white">
       <HeroSection />
-      <Startusing />
       <Whatwedosection />
       <PartnersSection />
       <Whyussection />

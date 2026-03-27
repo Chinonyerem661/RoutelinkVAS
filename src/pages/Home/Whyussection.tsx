@@ -17,7 +17,7 @@ interface WhyUsSectionProps {
 
 const defaultTopCards: FeatureCard[] = [
   {
-    title: "We Know Our Stuff",
+    title: "We know what works.",
     description: "Proven and trusted experts in mobile and digital VAS.",
   },
   {

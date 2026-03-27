@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
 
       {/* MOBILE NAV */}
       <div className="lg:hidden flex justify-between items-center px-5 h-[70px] bg-white shadow-sm relative z-50">
-        <Link href="/">
+        <Link href="/" onClick={() => setOpen(false)}>
            <Image src={Logo} alt="routelink VAS" height={34} className="h-[18px] w-auto" />
         </Link>
 
@@ -118,6 +118,17 @@ const Navbar: React.FC = () => {
         }`}
       >
         <ul className="text-gray-800 px-7 font-medium">
+          <li className="py-5 border-b border-gray-200">
+            <Link
+              onClick={toggleNav}
+              href="/"
+              className={`block ${
+                isActive("/") ? "text-[#F05A24] font-semibold" : ""
+              }`}
+            >
+              Home
+            </Link>
+          </li>
           <li className="py-5 border-b border-gray-200">
             <Link
               onClick={toggleNav}

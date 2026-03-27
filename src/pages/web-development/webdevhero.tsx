@@ -15,7 +15,7 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({
   categoryTitle,
   tagline = "From Landing Page to Full Platform",
-  title = "Scalable, mobile-responsive websites built with VAS integration, performance, and security at the core.",
+  title = "Scalable, mobile responsive websites built with VAS integration, performance, and security at the core.",
   buttonText = "Let's Start Building",
   buttonHref = "/contact",
   imageAlt = "RoutelinkVAS platform preview",

@@ -18,14 +18,14 @@ interface VASCapabilitiesSectionProps {
 
 const defaultCapabilities: Capability[] = [
   {
-    title: "Content Based VAS",
-    description: "Subscription and on-demand content services across SMS and web. From education to entertainment.",
-    link: "/services/content-vas",
+    title: "Entertainment",
+    description: "Gamified content including trivia, quizzes and challenges that keep subscribers coming back daily.",
+    link: "/services/entertainment",
   },
   {
-    title: "Web & Mobile VAS",
-    description: "Your customers pay through their phone network. Fast, safe, and simple.",
-    link: "/services/web-mobile-vas",
+    title: "Content based Services",
+    description: "Subscription and on-demand content services across SMS and web. From education to entertainment.",
+    link: "/services/content-based-services",
   },
   {
     title: "Web development",
@@ -33,19 +33,9 @@ const defaultCapabilities: Capability[] = [
     link: "/services/web-development",
   },
   {
-    title: "Charging and Billing",
+    title: "Payments & Billers",
     description: "Subscription management and billing designed for reliability, transparency, and fraud prevention.",
-    link: "/services/charging-billing",
-  },
-  {
-    title: "Entertainment",
-    description: "Gamified content including trivia, quizzes and challenges that keep subscribers coming back daily.",
-    link: "/services/entertainment",
-  },
-  {
-    title: "CRBT & OTT Services",
-    description: "Caller Ringback Tones and digital service aggregation across mobile networks.",
-    link: "/services/crbt-ott",
+    link: "/services/payments-billers",
   },
 ];
 
@@ -57,7 +47,7 @@ const VASCapabilitiesSection: React.FC<VASCapabilitiesSectionProps> = ({
 }) => {
   return (
     <section className="w-full bg-[#f0f0f0] py-20 px-6 md:px-12 lg:px-20 xl:px-28">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-medium text-[#F05A24] mb-6">
@@ -69,8 +59,8 @@ const VASCapabilitiesSection: React.FC<VASCapabilitiesSectionProps> = ({
           </p>
         </div>
 
-        {/* Cards Grid - 3 columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-20 mb-20">
+        {/* Cards Grid - 2 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-20 mb-20">
           {capabilities.map((capability) => (
             <div
               key={capability.title}

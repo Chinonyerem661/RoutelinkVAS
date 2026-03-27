@@ -82,22 +82,22 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li>
                 <Link 
-                  href="/services/content-vas" 
+                  href="/services/entertainment" 
                   className={`transition-colors duration-300 text-base ${
-                    isActive("/services/content-vas") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
+                    isActive("/services/entertainment") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
                   }`}
                 >
-                  Content Based VAS
+                  Entertainment
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="/services/web-mobile-vas" 
+                  href="/services/content-based-services" 
                   className={`transition-colors duration-300 text-base ${
-                    isActive("/services/web-mobile-vas") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
+                    isActive("/services/content-based-services") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
                   }`}
                 >
-                  Web &amp; Mobile VAS
+                  Content based Services
                 </Link>
               </li>
               <li>
@@ -112,32 +112,12 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link 
-                  href="/services/charging-billing" 
+                  href="/services/payments-billers" 
                   className={`transition-colors duration-300 text-base ${
-                    isActive("/services/charging-billing") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
+                    isActive("/services/payments-billers") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
                   }`}
                 >
-                  Charging &amp; Billing
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/services/entertainment" 
-                  className={`transition-colors duration-300 text-base ${
-                    isActive("/services/entertainment") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
-                  }`}
-                >
-                  Entertainment
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/services/crbt-ott" 
-                  className={`transition-colors duration-300 text-base ${
-                    isActive("/services/crbt-ott") ? "text-[#F05A24] font-semibold" : "text-gray-300 hover:text-white"
-                  }`}
-                >
-                  CRBT &amp; OTT Services
+                  Payments & Billers
                 </Link>
               </li>
             </ul>

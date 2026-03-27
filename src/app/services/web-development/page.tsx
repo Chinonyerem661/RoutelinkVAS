@@ -6,7 +6,7 @@ import ServiceDetailSection from "@/pages/web-development/servicesdetails";
 export default function WebDevelopment() {
     return (
        <main className="bg-white">
-        <WebDevHero categoryTitle="Web Development & Digital Platforms" />
+        <WebDevHero categoryTitle="Web Development" />
         <ServiceDetailSection />
         <HowWeWorkSection />
         <HeroBanner

@@ -1,12 +1,12 @@
 import HeroBanner from "@/components/Herobanner";
 import HowWeWorkSection from "@/components/Howweworksection";
-import WebDevHero from "@/pages/charging-billing/billinghero";
-import ServiceDetailSection from "@/pages/charging-billing/servicedetails";
+import WebDevHero from "@/pages/payments-billers/billinghero";
+import ServiceDetailSection from "@/pages/payments-billers/servicedetails";
 
 export default function Billing() {
     return (
        <main className="bg-white">
-        <WebDevHero categoryTitle="Charging, Billing & Revenue Management" />
+        <WebDevHero categoryTitle="Payments & Billers" />
         <ServiceDetailSection />
         <HowWeWorkSection />
         <HeroBanner

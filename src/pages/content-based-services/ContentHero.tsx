@@ -13,9 +13,9 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
-  categoryTitle = "Content Based VAS",
+  categoryTitle = "Content-Based Services",
   tagline = "Turn Your Content Into Cash!",
-  title = "We help you deliver your content. Send daily tips, news, games, or lessons—and get paid for it.",
+  title = "We help you deliver your content. Send daily tips, news, games, or lessons and get paid for it.",
   buttonText = "Let's Start Building",
   buttonHref = "/contact",
   imageAlt = "RoutelinkVAS platform preview",

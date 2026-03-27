@@ -9,12 +9,10 @@ import Logo from "../assets/Logo.svg";
 import Image from "next/image";
 
 const services = [
-  { title: "Content Based VAS", href: "/services/content-vas" },
-  { title: "Web & Mobile VAS", href: "/services/web-mobile-vas" },
-  { title: "Web development", href: "/services/web-development" },
-  { title: "Charging and Billing", href: "/services/charging-billing" },
   { title: "Entertainment", href: "/services/entertainment" },
-  { title: "CRBT & OTT Services", href: "/services/crbt-ott" },
+  { title: "Content based Services", href: "/services/content-based-services" },
+  { title: "Web development", href: "/services/web-development" },
+  { title: "Payments & Billers", href: "/services/payments-billers" },
 ];
 
 const Navbar: React.FC = () => {

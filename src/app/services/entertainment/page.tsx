@@ -6,7 +6,7 @@ import ServiceDetailSection from "@/pages/entertainment/servicedetails";
 export default function Entertainment() {
     return (
        <main className="bg-white">
-        <WebDevHero categoryTitle="Entertainment & Engagement Solutions" />
+        <WebDevHero categoryTitle="Entertainment" />
         <ServiceDetailSection />
         <HowWeWorkSection />
         <HeroBanner

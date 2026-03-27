@@ -68,7 +68,7 @@ const WhyUsSection: React.FC<WhyUsSectionProps> = ({
             {heading}{" "}
             <span className="text-[#F05A24]">{headingHighlight}</span>
           </h2>
-          <p className="text-gray-900 font-medium text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-800 font-medium text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
             We offer experienced, compliant mobile service solutions with strong carrier partnerships and
             complete end-to-end management.
           </p>

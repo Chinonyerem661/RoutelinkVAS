@@ -32,14 +32,14 @@ const QuantumLeapSection: React.FC = () => {
       <div className="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
         {/* Left Content */}
         <div className="w-full lg:w-1/2">
-          <h2 className="text-4xl md:text-5xl font-medium text-black mb-8 leading-tight">
+          <h2 className="text-3xl md:text-3xl font-medium text-black mb-8 leading-tight">
             Quantum Leap <span className="text-[#F05A24]">X10</span>
           </h2>
-          <div className="space-y-6">
-            <p className="text-gray-900 text-xl md:text-2xl leading-relaxed">
+          <div className="space-y-4">
+            <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
               Routelink Group is driving exponential growth across the digital landscape.
             </p>
-            <p className="text-gray-900 text-xl md:text-2xl leading-relaxed">
+            <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
               Our integrated ecosystem of brands delivers seamless, industry-leading solutions. We power the future of{" "}
               <span className="text-[#F05A24]">digital payments, connectivity, enterprise tech, and inclusive banking</span>. Discover the synergy connecting the future of business.
             </p>

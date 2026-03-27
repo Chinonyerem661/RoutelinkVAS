@@ -1,12 +1,12 @@
 import HeroBanner from "@/components/Herobanner";
 import HowWeWorkSection from "@/components/Howweworksection";
-import ContentHero from "@/pages/content-based-vas/ContentHero";
-import ServiceDetailSection from "@/pages/content-based-vas/Servicedetail";
+import ContentHero from "@/pages/content-based-services/ContentHero";
+import ServiceDetailSection from "@/pages/content-based-services/Servicedetail";
 
 export default function ContentVAS() {
     return (
        <main className="bg-white">
-        <ContentHero categoryTitle="Content Based VAS" />
+        <ContentHero categoryTitle="Content based Services" />
         <ServiceDetailSection />
         <HowWeWorkSection />
         <HeroBanner

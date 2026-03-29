@@ -12,7 +12,7 @@ const EcosystemPartnersSection: React.FC<EcosystemPartnersSectionProps> = ({
 }) => {
   return (
     <section className="w-full bg-white py-16 px-6 md:px-12 lg:px-20 xl:px-28">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-end gap-12">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start gap-12">
         {/* Left Side: Text + Partners */}
         <div className="flex flex-col gap-8 max-w-2xl">
           <div>

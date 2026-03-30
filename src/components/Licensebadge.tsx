@@ -13,7 +13,7 @@ const LicenseBadge: React.FC<LicenseBadgeProps> = ({
   text = "Licensed By The Nigerian communications Commission",
 }) => {
   return (
-    <div className="inline-flex items-center gap-4 bg-[#FDEEEE] rounded-lg px-6 py-3">
+    <div className="inline-flex items-center gap-3 bg-[#FDEEEE] rounded-lg px-4 py-3">
       {/* Logo */}
       <div className="flex-shrink-0 w-16 h-10 relative">
         {logoSrc ? (

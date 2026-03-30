@@ -28,9 +28,11 @@ const PartnersSection: React.FC<PartnersSectionProps> = ({
             {description}
           </p>
 
-          <div className="flex flex-col items-start gap-12">
-            <TelecomPartners />
-            <div className="pt-2">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-16 md:gap-24">
+            <div className="w-full md:max-w-[60%] overflow-hidden">
+              <TelecomPartners />
+            </div>
+            <div className="flex-shrink-0">
               <LicenseBadge text={nccText} />
             </div>
           </div>

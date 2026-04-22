@@ -21,8 +21,8 @@ const defaultContactInfo: ContactInfo[] = [
   {
     icon: <FaPhoneAlt className="w-4 h-4" />,
     label: "Phone Number:",
-    value: "(+234) 12 345 678 90",
-    link: "tel:+2341234567890",
+    value: "+234 803 639 0777",
+    link: "tel:+2348036390777",
   },
   {
     icon: <FaEnvelope className="w-4 h-4" />,
@@ -39,7 +39,7 @@ const defaultContactInfo: ContactInfo[] = [
   {
     icon: <FaMapMarkerAlt className="w-4 h-4" />,
     label: "Office Address:",
-    value: "HQ Routelink, Lagos 900108, Ikeja, Lagos.",
+    value: "Ground Floor, Africa Re House, Plot 1679 Karimu Kotun St, Victoria Island, Lagos.",
     link: "https://maps.google.com/?q=HQ+Routelink+Lagos",
   },
 ];

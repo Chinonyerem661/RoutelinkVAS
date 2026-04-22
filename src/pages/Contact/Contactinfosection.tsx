@@ -27,8 +27,8 @@ const defaultContactInfo: ContactInfo[] = [
   {
     icon: <FaEnvelope className="w-4 h-4" />,
     label: "Email Address:",
-    value: "info@routelinkVAS.com",
-    link: "mailto:info@routelinkVAS.com",
+    value: "busdev@routelinksys.com",
+    link: "mailto:busdev@routelinksys.com",
   },
   {
     icon: <FaInstagram className="w-4 h-4" />,
@@ -39,7 +39,7 @@ const defaultContactInfo: ContactInfo[] = [
   {
     icon: <FaMapMarkerAlt className="w-4 h-4" />,
     label: "Office Address:",
-    value: "HQ Routelink, Lagos 900108, Ikeja, Lagos.",
+    value: "Ground Floor, Africa Re House, Plot 1679 Karimu Kotun St, Victoria Island, Lagos.",
     link: "https://maps.google.com/?q=HQ+Routelink+Lagos",
   },
 ];
@@ -99,12 +99,16 @@ const ContactInfoSection: React.FC<ContactInfoSectionProps> = ({
                     href={info.link}
                     target={info.link.startsWith("http") ? "_blank" : undefined}
                     rel={info.link.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-[#F05A24] font-medium text-lg leading-snug hover:underline block"
+                    className={`text-[#F05A24] font-medium leading-snug hover:underline block ${
+                      info.label === "Office Address:" ? "text-base" : "text-lg"
+                    }`}
                   >
                     {info.value}
                   </a>
                 ) : (
-                  <p className="text-[#F05A24] font-medium text-lg leading-snug">
+                  <p className={`text-[#F05A24] font-medium leading-snug ${
+                    info.label === "Office Address:" ? "text-base" : "text-lg"
+                  }`}>
                     {info.value}
                   </p>
                 )}
